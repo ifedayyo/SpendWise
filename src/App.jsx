@@ -1,28 +1,55 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+//import { useState } from "react";
+//import reactLogo from "./assets/react.svg";
+import React from "react";
+import { Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./HomePage";
-import
+import Register from "./Register";
+import UserAccount from "./UserAccount";
 
-function App() {};
+function App() {
+  return (
+    <>
+      <HomePage />
+      root.render(
+      <React.StrictMode>
+        <BrowserRouter>
+          <NavBar />
+          {/*<NavBar />
+          <FootBar />
+          the homepage is where users can login
+          */}
 
-  // const [count, setCount] = useState(0)
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/aboutme" element={<HomePage />} />
+            <Route path="/portfolio" element={<Register />} />
+            <Route path="*" element={<UserAccount />} />
+            {/* <Route path="firstproject" element={<FirstProject />} />
+             */}
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
+    </>
+  );
+}
 
-  
-
-
+// const [count, setCount] = useState(0)
 
 function NavBar() {
   return (
     <div className="navbar">
-      <img
+      {/*<img
         className="logo"
         src={logo}
         alt="Portfolio"
         width="100"
         height="50"
-      />
+      />*/}
 
       <Link to="/" activeClassName="active">
         Home
@@ -36,6 +63,5 @@ function NavBar() {
     </div>
   );
 }
-
 
 export default App;
