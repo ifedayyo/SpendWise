@@ -5,16 +5,17 @@ export default function HomePage() {
         <div className="container">
           <div className="name">
             {" "}
-            <p>Favour Olukayode</p>{" "}
+            <p></p>{" "}
           </div>
 
           <div className="jobtag">
             {" "}
-            <p> Software Engineer </p>
+            <p> </p>
           </div>
 
           <h1 className="description">
-            Hey there! I am a creative Flutter developer and backend engineer.
+            You should be the one managing your finance. NOT the other way
+            round!
           </h1>
         </div>
         <div className="projectcontainer">

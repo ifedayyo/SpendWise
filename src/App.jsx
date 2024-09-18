@@ -24,10 +24,9 @@ function App() {
           */}
 
         <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/aboutme" element={<HomePage />} />
-          <Route path="/portfolio" element={<Register />} />
-          <Route path="*" element={<UserAccount />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/useraccount" element={<UserAccount />} />
           {/* <Route path="firstproject" element={<FirstProject />} />
            */}
         </Routes>
