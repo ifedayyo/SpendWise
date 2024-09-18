@@ -13,23 +13,16 @@ import UserAccount from "./UserAccount";
 function App() {
   return (
     <>
+      <NavBar />
       <HomePage />
 
-      <React.StrictMode>
-        <NavBar />
-        {/*<NavBar />
-          <FootBar />
-          the homepage is where users can login
-          */}
-
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/useraccount" element={<UserAccount />} />
-          {/* <Route path="firstproject" element={<FirstProject />} />
-           */}
-        </Routes>
-      </React.StrictMode>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/useraccount" element={<UserAccount />} />
+        {/* <Route path="firstproject" element={<FirstProject />} />
+         */}
+      </Routes>
     </>
   );
 }

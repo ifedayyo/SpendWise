@@ -66,10 +66,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.navbar {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #535bf2;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .navbar a {
   text-decoration: none;
   padding: 10px;
-  color: black;
+  color: white;
+  transition: color 0.2s ease;
 }
 
 .navbar a active {
