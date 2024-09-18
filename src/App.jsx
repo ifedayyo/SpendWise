@@ -2,7 +2,7 @@
 //import reactLogo from "./assets/react.svg";
 import React from "react";
 import { Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+
 import { Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -15,24 +15,22 @@ function App() {
   return (
     <>
       <HomePage />
-      root.render(
+
       <React.StrictMode>
-        <BrowserRouter>
-          <NavBar />
-          {/*<NavBar />
+        <NavBar />
+        {/*<NavBar />
           <FootBar />
           the homepage is where users can login
           */}
 
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/aboutme" element={<HomePage />} />
-            <Route path="/portfolio" element={<Register />} />
-            <Route path="*" element={<UserAccount />} />
-            {/* <Route path="firstproject" element={<FirstProject />} />
-             */}
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/aboutme" element={<HomePage />} />
+          <Route path="/portfolio" element={<Register />} />
+          <Route path="*" element={<UserAccount />} />
+          {/* <Route path="firstproject" element={<FirstProject />} />
+           */}
+        </Routes>
       </React.StrictMode>
     </>
   );
