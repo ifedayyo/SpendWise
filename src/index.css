@@ -94,3 +94,15 @@ button:focus-visible {
   text-align: center;
   margin-top: 200px;
 }
+.descriptionparagraph {
+  text-align: center;
+}
+.descriptionbutton {
+  background-color: #535bf2;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  align-items: center;
+  display: block;
+  margin: auto;
+}

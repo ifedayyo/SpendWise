@@ -8,7 +8,17 @@ export default function HomePage() {
             <br /> <strong>NOT</strong> the other way round!
           </h1>
 
-          <p></p>
+          <p className="descriptionparagraph">
+            {" "}
+            The month is not over and you are already owing PalmPay. We know you
+            want better for yourself. You want to make the most of every single
+            kobo. You want to track how money trinkles in and out of your
+            account. You want to save for the rainy day too. You don't want to
+            eat your future. <br /> We know. <br /> We know you want to{" "}
+            <strong> SpendWise</strong>.
+          </p>
+
+          <button className="descriptionbutton">Get Started</button>
         </div>
         <div className="projectcontainer">
           {/*First project*/}
