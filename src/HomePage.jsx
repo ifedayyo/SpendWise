@@ -3,20 +3,12 @@ export default function HomePage() {
     <div>
       <div>
         <div className="container">
-          <div className="name">
-            {" "}
-            <p></p>{" "}
-          </div>
-
-          <div className="jobtag">
-            {" "}
-            <p> </p>
-          </div>
-
           <h1 className="description">
-            You should be the one managing your finance. NOT the other way
-            round!
+            You should be the one managing your finance.
+            <br /> <strong>NOT</strong> the other way round!
           </h1>
+
+          <p></p>
         </div>
         <div className="projectcontainer">
           {/*First project*/}
