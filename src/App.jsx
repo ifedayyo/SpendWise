@@ -1,10 +1,9 @@
 //import { useState } from "react";
 //import reactLogo from "./assets/react.svg";
 import React from "react";
-import { Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 
 import { Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./HomePage";
@@ -48,15 +47,15 @@ function NavBar() {
         height="50"
       />*/}
 
-      <Link to="/" activeClassName="active">
+      <NavLink to="/" activeClassName="active">
         Home
-      </Link>
-      <Link to="/aboutme" activeClassName="active">
+      </NavLink>
+      <NavLink to="/aboutme" activeClassName="active">
         About{" "}
-      </Link>
-      <Link to="/portfolio" activeClassName="active">
+      </NavLink>
+      <NavLink to="/portfolio" activeClassName="active">
         Portfolio
-      </Link>
+      </NavLink>
     </div>
   );
 }
