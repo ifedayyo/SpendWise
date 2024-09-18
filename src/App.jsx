@@ -47,9 +47,21 @@ function NavBar() {
         height="50"
       />*/}
 
-      <NavLink to="/">Homepage</NavLink>
-      <NavLink to="/register">Register </NavLink>
-      <NavLink to="/useraccount">Account</NavLink>
+      <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+        Homepage
+      </NavLink>
+      <NavLink
+        to="/register"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Register{" "}
+      </NavLink>
+      <NavLink
+        to="/useraccount"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Account
+      </NavLink>
     </div>
   );
 }
