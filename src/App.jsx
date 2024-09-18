@@ -47,15 +47,9 @@ function NavBar() {
         height="50"
       />*/}
 
-      <NavLink to="/" activeClassName="active">
-        Home
-      </NavLink>
-      <NavLink to="/aboutme" activeClassName="active">
-        About{" "}
-      </NavLink>
-      <NavLink to="/portfolio" activeClassName="active">
-        Portfolio
-      </NavLink>
+      <NavLink to="/">Homepage</NavLink>
+      <NavLink to="/register">Register </NavLink>
+      <NavLink to="/useraccount">Account</NavLink>
     </div>
   );
 }
