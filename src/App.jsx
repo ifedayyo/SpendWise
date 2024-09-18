@@ -5,7 +5,7 @@ import { NavLink, Route } from "react-router-dom";
 
 import { Routes } from "react-router-dom";
 
-import "./App.css";
+import "./index.css";
 import HomePage from "./HomePage";
 import Register from "./Register";
 import UserAccount from "./UserAccount";
