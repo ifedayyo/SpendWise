@@ -9,6 +9,7 @@ import "./index.css";
 import HomePage from "./HomePage";
 import Register from "./Register";
 import UserAccount from "./UserAccount";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         {/* <Route path="firstproject" element={<FirstProject />} />
          */}
       </Routes>
+      <Footer />
     </>
   );
 }

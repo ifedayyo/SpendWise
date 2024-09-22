@@ -20,6 +20,7 @@ export default function HomePage() {
 
           <button className="descriptionbutton">Get Started</button>
         </div>
+
         <div className="projectcontainer">
           {/*First project*/}
           <div className="firstchildcontainer">
