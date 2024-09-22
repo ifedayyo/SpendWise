@@ -27,7 +27,7 @@ export default function HomePage() {
               <a href="FirstProject.js">
                 <img
                   className="imageone"
-                  src="/assets/a-laptop-showing-charts-on-the-screen.jpg"
+                  src="src//assets/a-laptop-showing-charts-on-the-screen.jpg"
                   alt="a laptop showing charts on the screen"
                 />
               </a>
@@ -37,8 +37,6 @@ export default function HomePage() {
               {" "}
               <a href="FirstProject.js">Project 1</a>{" "}
             </div>
-
-            <div className="flutterproject">Flutter Project</div>
           </div>
 
           {/*second project*/}
@@ -47,7 +45,7 @@ export default function HomePage() {
               <a href="FirstProject.js" className="linktoprojectone">
                 <img
                   className="imagetwo"
-                  src="assets/boxes-with-the-word-budget-on-them.jfif"
+                  src="src/assets/boxes-with-the-word-budget-on-them.jfif"
                   alt="boxes with the word budget on them"
                 />
               </a>
@@ -57,8 +55,6 @@ export default function HomePage() {
               {" "}
               <a href="FirstProject.js">Project 1</a>{" "}
             </div>
-
-            <div className="flutterproject">Flutter Project</div>
           </div>
         </div>
         <div className="projectcontainer">

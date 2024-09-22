@@ -1,6 +1,6 @@
 //import { useState } from "react";
 //import reactLogo from "./assets/react.svg";
-import React from "react";
+
 import { NavLink, Route } from "react-router-dom";
 
 import { Routes } from "react-router-dom";
@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <NavBar />
-      <HomePage />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
