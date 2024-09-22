@@ -50,17 +50,7 @@ export default function HomePage() {
                 />
               </a>
             </div>
-
-            <div className="projectone">
-              {" "}
-              <a href="FirstProject.js">Project 1</a>{" "}
-            </div>
           </div>
-        </div>
-        <div className="projectcontainer">
-          {/*third project*/}
-
-          {/*fourth project*/}
         </div>
       </div>
     </div>
