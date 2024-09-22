@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
   return (
     <div>
@@ -7,7 +9,6 @@ export default function HomePage() {
             You should be the one managing your finance.
             <br /> <strong>NOT</strong> the other way round!
           </h1>
-
           <p className="descriptionparagraph">
             {" "}
             The month is not over and you are already owing PalmPay. We know you
@@ -17,8 +18,9 @@ export default function HomePage() {
             the rainy day too. You don't want to eat your future. <br /> We
             know. <br /> We know you want to <strong> SpendWise</strong>.
           </p>
-
-          <button className="descriptionbutton">Get Started</button>
+          <Link to="/Register">
+            <button className="descriptionbutton">Get Started</button>
+          </Link>{" "}
         </div>
 
         <div className="projectcontainer">
