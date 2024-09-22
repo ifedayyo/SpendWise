@@ -130,3 +130,6 @@ button:focus-visible {
   left: 20px;
   right: 20px;
 }
+input {
+  width: 100%;
+}
