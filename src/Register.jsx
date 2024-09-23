@@ -6,8 +6,11 @@ function Register() {
         the first step to <strong> SpendWise </strong>. So, chin up! The best is
         about to come.{" "}
       </p>
-      <form>
-        <label htmlFor="fname">First name: </label> <br />
+      <form className="form">
+        <label htmlFor="fname" className="label">
+          First name:{" "}
+        </label>{" "}
+        <br />
         <input type="text" id="fname" name="fname" required />
         <label htmlFor="lname">Last nme: </label> <br />
         <input type="text" id="lname" name="lname" required />
