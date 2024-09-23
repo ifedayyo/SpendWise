@@ -6,8 +6,8 @@ function Register() {
         the first step to <strong> SpendWise </strong>. So, chin up! The best is
         about to come.{" "}
       </p>
-      <form className="form">
-        <label htmlFor="fname" className="label">
+      <form className="form-styling">
+        <label htmlFor="fname" className="label-styling">
           First name:{" "}
         </label>{" "}
         <br />

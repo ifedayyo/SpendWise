@@ -40,19 +40,18 @@
 .read-the-docs {
   color: #888;
 }
-.form {
+.form-styling {
   position: relative;
   width: 740px;
   height: 498px;
   margin: 0 auto;
-  padding: 1em;
-  box-sizing: border-box;
+  padding: 12px 20px;
 
   display: grid;
   grid-gap: 20px;
   grid-template-rows: 10em 1em 1em 1em;
   border-width: 20px;
 }
-.label {
+.label-styling {
   height: 900px;
 }
