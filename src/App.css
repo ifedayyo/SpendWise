@@ -42,16 +42,15 @@
 }
 .form-styling {
   position: relative;
-  width: 740px;
 
   margin: 0 auto;
   padding: 12px 20px;
 
   display: grid;
-  grid-gap: 20px;
-  grid-template-rows: 10em 1em 1em 1em;
+  grid-gap: 2px;
+  grid-template-rows: 1em 1em 1em 1em;
   border-width: 20px;
 }
 .label-styling {
-  height: 900px;
+  height: px;
 }
