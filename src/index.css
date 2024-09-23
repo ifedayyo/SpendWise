@@ -143,21 +143,28 @@ input {
 .form-styling {
   position: relative;
   color: #646cff;
-  margin: 0 auto;
+  margin: 8% auto;
   padding: 12px 20px;
   margin-bottom: 20px;
-  height: 400px;
+  min-height: 60%;
+  width: 60%;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
   display: grid;
   grid-gap: 2px;
   grid-template-rows: 1em 1em 1em 1em;
 
   background-color: white;
 }
-
+.label-styling {
+  padding-right: 20px;
+}
 .input-styling {
   background-color: white;
   color: #646cff;
   height: 25px;
   width: 300px;
   border-color: #646cff;
+}
+.input-styling:focus {
+  border-color: rgb(37, 7, 170);
 }

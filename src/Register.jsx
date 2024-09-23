@@ -20,7 +20,10 @@ function Register() {
           name="fname"
           required
         />
-        <label htmlFor="lname">Last name: </label> <br />
+        <label htmlFor="lname" className="label-styling">
+          Last name:{" "}
+        </label>{" "}
+        <br />
         <input
           type="text"
           id="lname"
@@ -28,7 +31,10 @@ function Register() {
           name="lname"
           required
         />
-        <label htmlFor="email">Enter your email: </label> <br />
+        <label htmlFor="email" className="label-styling">
+          Enter your email:{" "}
+        </label>{" "}
+        <br />
         <input
           type="email"
           id="email"
