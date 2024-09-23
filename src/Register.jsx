@@ -1,3 +1,4 @@
+import "./App.css";
 function Register() {
   return (
     <>
@@ -12,7 +13,7 @@ function Register() {
         </label>{" "}
         <br />
         <input type="text" id="fname" name="fname" required />
-        <label htmlFor="lname">Last nme: </label> <br />
+        <label htmlFor="lname">Last name: </label> <br />
         <input type="text" id="lname" name="lname" required />
         <label htmlFor="email">Enter your email: </label> <br />
         <input type="email" id="email" name="email" required />
