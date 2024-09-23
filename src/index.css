@@ -145,15 +145,19 @@ input {
   color: #646cff;
   margin: 0 auto;
   padding: 12px 20px;
-
+  margin-bottom: 20px;
+  height: 400px;
   display: grid;
   grid-gap: 2px;
   grid-template-rows: 1em 1em 1em 1em;
-  border-width: 20px;
+
   background-color: white;
 }
 
 .input-styling {
   background-color: white;
-  color: black;
+  color: #646cff;
+  height: 25px;
+  width: 300px;
+  border-color: #646cff;
 }
