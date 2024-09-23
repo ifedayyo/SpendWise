@@ -3,7 +3,7 @@ function Register() {
     <>
       <p>
         Hey there - this is to let you know that we are proud of you for taking
-        the first step to <strong> SpendWise</strong>. So, chin up! The best is
+        the first step to <strong> SpendWise </strong>. So, chin up! The best is
         about to come.{" "}
       </p>
       <form>
