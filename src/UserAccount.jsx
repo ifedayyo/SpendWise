@@ -1,8 +1,12 @@
+import "./index.css";
 function UserAccount() {
   return (
     <div>
-      <div>
-        <p> 2024-08-09</p>
+      <div className="balance-display">
+        <p> 2024-08-09 </p>
+        <p>Current Balance:</p>
+        <p>Total Expenses: #200,000</p>
+        <p> Total Income: #300,000</p>
       </div>
     </div>
   );
