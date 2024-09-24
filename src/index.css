@@ -147,7 +147,7 @@ input {
   padding: 12px 20px;
   margin-bottom: 20px;
   min-height: 60%;
-  width: 60%;
+  width: 100%;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
   display: grid;
   grid-gap: 2px;
@@ -162,10 +162,20 @@ input {
   background-color: white;
   color: #646cff;
   height: 25px;
-  width: 300px;
+  width: 100%;
   border-color: #646cff;
-  margin-bottom: 30px;
+  margin: 20px 0;
+  padding: 12px;
+  border-radius: 10px;
 }
 .input-styling:focus {
   border-color: rgb(37, 7, 170);
+}
+.input-styling:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+}
+.button-styling {
+  background-color: #646cff;
+  width: 80%;
+  margin: auto;
 }
