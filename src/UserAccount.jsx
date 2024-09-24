@@ -8,6 +8,8 @@ function UserAccount() {
         <p>Total Expenses: #200,000</p>
         <p> Total Income: #300,000</p>
       </div>
+
+      <body className="account-body">+</body>
     </div>
   );
 }
