@@ -151,12 +151,12 @@ input {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
   display: grid;
   grid-gap: 2px;
-  grid-template-rows: 1em 1em 1em 1em;
+  grid-template-rows: 1.5em 1.5em 1.5em 1.5em;
 
   background-color: white;
 }
 .label-styling {
-  padding-right: 20px;
+  padding-right: 200px;
 }
 .input-styling {
   background-color: white;
@@ -164,6 +164,7 @@ input {
   height: 25px;
   width: 300px;
   border-color: #646cff;
+  margin-bottom: 30px;
 }
 .input-styling:focus {
   border-color: rgb(37, 7, 170);
