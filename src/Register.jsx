@@ -42,3 +42,13 @@ function Register() {
 }
 
 export default Register;
+
+{
+  /*
+  So here is the real work. here is the hard work:
+  1. when we collect users' info, what do we do with it?
+  where does it go?
+  2. we need to create the account page. what will it look
+  like? and also the logic behind it.
+  */
+}
