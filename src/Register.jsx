@@ -35,7 +35,7 @@ function Register() {
           placeholder="Enter your email"
           required
         />
-        <button className="button-styling">Submit</button>
+        <button className="button-styling">SUBMIT</button>
       </form>
     </>
   );

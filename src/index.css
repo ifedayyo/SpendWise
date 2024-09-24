@@ -142,34 +142,40 @@ input {
 }
 .form-styling {
   position: relative;
-  color: #646cff;
   margin: 8% auto;
   padding: 12px 20px;
-  margin-bottom: 20px;
-  min-height: 60%;
+  margin-bottom: 50px;
   width: 100%;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
-  display: grid;
-  grid-gap: 2px;
-  grid-template-rows: 1.5em 1.5em 1.5em 1.5em;
 
+  display: grid;
+  grid-gap: 50px;
+  grid-template-rows: 1.5em 1.5em 1.5em 1.5em;
+  height: 100%;
   background-color: white;
 }
-.label-styling {
-  padding-right: 200px;
-}
+
 .input-styling {
   background-color: white;
-  color: #646cff;
-  height: 25px;
+
+  padding: 10px;
   width: 100%;
   border-color: #646cff;
-  margin: 20px 0;
-  padding: 12px;
+  margin: 10px 0;
+  height: 20px;
   border-radius: 10px;
+  color: rgb(37, 7, 170);
+  font-weight: bold;
+  font-size: medium;
+}
+.input-styling:placeholder-shown {
+  color: rgb(37, 7, 170);
+  font-weight: bold;
+  font-size: medium;
 }
 .input-styling:focus {
   border-color: rgb(37, 7, 170);
+  font-weight: bold;
+  font-size: medium;
 }
 .input-styling:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
@@ -177,5 +183,16 @@ input {
 .button-styling {
   background-color: #646cff;
   width: 80%;
+  height: 40px;
   margin: auto;
+  text-align: center;
+  margin-top: -10px;
+}
+#fname {
+  padding-bottom: 15px 15px;
+}
+#lname {
+  margin-top: 15px;
+}
+#email {
 }
