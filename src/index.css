@@ -117,8 +117,7 @@ button:focus-visible {
   background-color: #535bf2;
   height: 30px;
   bottom: 0;
-  left: 20px;
-  right: 20px;
+  margin-top: 400px;
 }
 input {
   width: 100%;
@@ -194,5 +193,14 @@ input {
   width: 100%;
 }
 .account-body {
-  height: 1000px;
+}
+.plus-icon {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+
+  bottom: -100px;
+  right: 20px;
+  z-index: 1;
 }

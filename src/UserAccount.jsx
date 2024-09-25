@@ -1,7 +1,7 @@
 import "./index.css";
 function UserAccount() {
   return (
-    <div>
+    <>
       <div className="balance-display">
         <p> 2024-08-09 </p>
         <p>Current Balance:</p>
@@ -9,8 +9,12 @@ function UserAccount() {
         <p> Total Income: #300,000</p>
       </div>
 
-      <body className="account-body">+</body>
-    </div>
+      <body>
+        <div className="account-body">
+          <div className="plus-icon">+</div>
+        </div>
+      </body>
+    </>
   );
 }
 export default UserAccount;
