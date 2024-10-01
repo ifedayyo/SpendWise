@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./index.css";
-import "Calculate" from "./Calculate";
+import Calculate from "./Calculate";
+
 function UserAccount() {
   const [isOpenOne, setIsOpenOne] = useState(false);
   const [isOpenTwo, setIsOpenTwo] = useState(false);
   const [isOpenThree, setIsOpenThree] = useState(false);
+  const [calculate, setCalculate] = useState();
   function Options() {}
   return (
     <>
@@ -37,7 +39,12 @@ function UserAccount() {
 
               {isOpenTwo && (
                 <select className="dropdown-select">
-                  <option> Food </option>
+                  {calculate && (
+                    <option onClick={() => setCalculate(<Calculate />)}>
+                      {" "}
+                      Food{" "}
+                    </option>
+                  )}
                   <option> Accomodation/Housing </option>
                   <option> Rental </option>
                   <option> Transportation </option>
