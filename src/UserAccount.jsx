@@ -1,5 +1,20 @@
 import "./index.css";
 function UserAccount() {
+  function Options() {
+    <div>
+      <p>Expenses</p>
+      <div>
+        <p>Food</p>
+        <p> Clothing</p>
+        <p> Fruits </p>
+        <p> Shopping </p>
+        <p> Transportation</p>
+        <p> Home </p>
+        <p> Emergency</p>
+        <p> Other</p>
+      </div>
+    </div>;
+  }
   return (
     <>
       <div className="balance-display">
@@ -8,15 +23,22 @@ function UserAccount() {
         <p>Total Expenses: #200,000</p>
         <p> Total Income: #300,000</p>
       </div>
-
       <body>
+        <Options />
         <div className="account-body">
-          <div className="plus-icon">+</div>
+          <a href="#">
+            <img
+              className="plus-icon"
+              src="src/assets/plus_icon_useraccount.png"
+              alt="a plus icon users can click on to bring up a set of choices"
+            />{" "}
+          </a>
         </div>
       </body>
     </>
   );
 }
+
 export default UserAccount;
 
 {

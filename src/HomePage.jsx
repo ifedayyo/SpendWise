@@ -30,7 +30,7 @@ export default function HomePage() {
               <a href="FirstProject.js">
                 <img
                   className="imageone"
-                  src="src//assets/a-laptop-showing-charts-on-the-screen.jpg"
+                  src="src/assets/a-laptop-showing-charts-on-the-screen.jpg"
                   alt="a laptop showing charts on the screen"
                 />
               </a>

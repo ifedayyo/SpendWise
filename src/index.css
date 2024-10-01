@@ -203,4 +203,5 @@ input {
   bottom: -300px;
   right: -300px;
   z-index: 1;
+  height: 30px;
 }
