@@ -1,5 +1,5 @@
 import { Textfit } from "react-textfit";
-import ".index/css";
+import "./index.css";
 
 const btnValues = [
   ["C", "+-", "%", "/"],
