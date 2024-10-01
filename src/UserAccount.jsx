@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./index.css";
 function UserAccount() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenOne, setIsOpenOne] = useState(false);
+  const [isOpenTwo, setIsOpenTwo] = useState(false);
+  const [isOpenThree, setIsOpenThree] = useState(false);
   function Options() {}
   return (
     <>
@@ -19,33 +21,47 @@ function UserAccount() {
               className="plus-icon"
               src="src/assets/plus_icon_useraccount.png"
               alt="a plus icon users can click on to bring up a set of choices"
+              onClick={() => setIsOpenOne(!isOpenOne)}
             />{" "}
           </a>
 
-          <div className="dropdown-container">
-            <h3 className="dropdown-one" onClick={() => setIsOpen(!isOpen)}>
-              Expenses{" "}
-            </h3>
+          {isOpenOne && (
+            <div className="dropdown-container">
+              <h3
+                className="dropdown-one"
+                onClick={() => setIsOpenTwo(!isOpenTwo)}
+              >
+                Expenses{" "}
+              </h3>
 
-            {isOpen && (
-              <select className="dropdown-select">
-                <option> Food </option>
-                <option> Accomodation/Housing </option>
-                <option> Rental </option>
-                <option> Transportation </option>
-                <option> Shopping </option>
-                <option> Emergency </option>
-                <option> Miscallenous </option>
-              </select>
-            )}
+              {isOpenTwo && (
+                <select className="dropdown-select">
+                  <option> Food </option>
+                  <option> Accomodation/Housing </option>
+                  <option> Rental </option>
+                  <option> Transportation </option>
+                  <option> Shopping </option>
+                  <option> Emergency </option>
+                  <option> Miscallenous </option>
+                </select>
+              )}
 
-            <h3> Income</h3>
-            <select className="dropdown-select">
-              <option> Salary </option>
-              <option> Dividends </option>
-              <option> Refunds </option>
-            </select>
-          </div>
+              <h3
+                className="dropdown-one"
+                onClick={() => setIsOpenThree(!isOpenThree)}
+              >
+                {" "}
+                Income
+              </h3>
+              {isOpenThree && (
+                <select className="dropdown-select">
+                  <option> Salary </option>
+                  <option> Dividends </option>
+                  <option> Refunds </option>
+                </select>
+              )}
+            </div>
+          )}
         </div>
       </body>
     </>
