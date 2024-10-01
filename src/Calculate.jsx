@@ -15,3 +15,11 @@ function Screen() {
 function ButtonBox() {
   return <div className="buutton-box">children</div>;
 }
+
+function Button() {
+  return (
+    <button className="button" onClick={onClick}>
+      value
+    </button>
+  );
+}
