@@ -207,13 +207,21 @@ input {
 }
 .dropdown-container {
   display: flex;
+  gap: 50px;
 }
 .dropdown-select {
-  padding: 16px;
+  padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 .dropdown-one {
   cursor: pointer;
+}
+.calculator-container {
+  width: 340px;
+  height: 540px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #485461;
 }
