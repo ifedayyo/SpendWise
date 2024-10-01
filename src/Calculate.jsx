@@ -11,3 +11,7 @@ function Screen() {
     </Textfit>
   );
 }
+
+function ButtonBox() {
+  return <div className="buutton-box">children</div>;
+}
