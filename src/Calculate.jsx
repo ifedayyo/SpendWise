@@ -1,7 +1,20 @@
 import { Textfit } from "react-textfit";
 import ".index/css";
+
 export default function Calculate() {
-  return <div className="calculator-container"> children </div>;
+  return (
+    <Screen className="calculator-container">
+      <ButtonBox>
+        <Button
+          className=""
+          value="0"
+          onClick={() => {
+            console.log("Button clicked");
+          }}
+        />
+      </ButtonBox>
+    </Screen>
+  );
 }
 
 function Screen() {

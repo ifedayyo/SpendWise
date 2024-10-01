@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import "Calculate" from "./Calculate";
 function UserAccount() {
   const [isOpenOne, setIsOpenOne] = useState(false);
   const [isOpenTwo, setIsOpenTwo] = useState(false);
