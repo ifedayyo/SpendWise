@@ -1,20 +1,8 @@
+import { useState } from "react";
 import "./index.css";
 function UserAccount() {
-  function Options() {
-    <div>
-      <p>Expenses</p>
-      <div>
-        <p>Food</p>
-        <p> Clothing</p>
-        <p> Fruits </p>
-        <p> Shopping </p>
-        <p> Transportation</p>
-        <p> Home </p>
-        <p> Emergency</p>
-        <p> Other</p>
-      </div>
-    </div>;
-  }
+  const [isOpen, setIsOpen] = useState(false);
+  function Options() {}
   return (
     <>
       <div className="balance-display">
@@ -33,6 +21,31 @@ function UserAccount() {
               alt="a plus icon users can click on to bring up a set of choices"
             />{" "}
           </a>
+
+          <div className="dropdown-container">
+            <h3 className="dropdown-one" onClick={() => setIsOpen(!isOpen)}>
+              Expenses{" "}
+            </h3>
+
+            {isOpen && (
+              <select className="dropdown-select">
+                <option> Food </option>
+                <option> Accomodation/Housing </option>
+                <option> Rental </option>
+                <option> Transportation </option>
+                <option> Shopping </option>
+                <option> Emergency </option>
+                <option> Miscallenous </option>
+              </select>
+            )}
+
+            <h3> Income</h3>
+            <select className="dropdown-select">
+              <option> Salary </option>
+              <option> Dividends </option>
+              <option> Refunds </option>
+            </select>
+          </div>
         </div>
       </body>
     </>
