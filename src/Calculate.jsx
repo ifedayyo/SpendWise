@@ -1,4 +1,6 @@
 import { Textfit } from "react-textfit";
+import { PropTypes } from "prop-types";
+
 import "./index.css";
 
 const btnValues = [
@@ -10,41 +12,43 @@ const btnValues = [
 ];
 export default function Calculate() {
   return (
-    <Screen className="calculator-container">
+    <div className="calculator-container">
+      <Screen value="0" />
       <ButtonBox>
         {btnValues.flat().map((btn, i) => {
-          return (
-            <Button
-              key={i}
-              className={btn === "=" ? "equals" : ""}
-              value={btn}
-              onClick={() => {
-                console.log(`${btn} clicked`);
-              }}
-            />
-          );
+          <Button
+            key={i}
+            className={btn === "=" ? "equals" : ""}
+            value={btn}
+            onClick={() => {
+              console.log(`${btn} clicked`);
+            }}
+          />;
         })}
       </ButtonBox>
-    </Screen>
+    </div>
   );
 }
 
-function Screen() {
+function Screen({ value }) {
   return (
     <Textfit className="screen" mode="single" max={70}>
-      value
+      {value}
     </Textfit>
   );
 }
+Screen.PropTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
-function ButtonBox() {
-  return <div className="buutton-box">children</div>;
+function ButtonBox({ children }) {
+  return <div className="buutton-box">{children}</div>;
 }
 
-function Button() {
+function Button({ value, onClick, className }) {
   return (
-    <button className="button" onClick={onClick}>
-      value
+    <button className={`'button ${className}`} onClick={onClick}>
+      {value}
     </button>
   );
 }

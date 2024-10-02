@@ -6,7 +6,15 @@ function UserAccount() {
   const [isOpenOne, setIsOpenOne] = useState(false);
   const [isOpenTwo, setIsOpenTwo] = useState(false);
   const [isOpenThree, setIsOpenThree] = useState(false);
-  const [calculate, setCalculate] = useState();
+  const [calculate, setCalculate] = useState(false);
+
+  const handleSelectChange = (e) => {
+    if (e.target.value === "Food") {
+      setCalculate(true);
+    } else {
+      setCalculate(false);
+    }
+  };
   function Options() {}
   return (
     <>
@@ -39,12 +47,7 @@ function UserAccount() {
 
               {isOpenTwo && (
                 <select className="dropdown-select">
-                  {calculate && (
-                    <option onClick={() => setCalculate(<Calculate />)}>
-                      {" "}
-                      Food{" "}
-                    </option>
-                  )}
+                  (<option onClick={handleSelectChange}> Food </option>)
                   <option> Accomodation/Housing </option>
                   <option> Rental </option>
                   <option> Transportation </option>
@@ -53,6 +56,8 @@ function UserAccount() {
                   <option> Miscallenous </option>
                 </select>
               )}
+
+              {calculate && <Calculate />}
 
               <h3
                 className="dropdown-one"
