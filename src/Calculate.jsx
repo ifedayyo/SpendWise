@@ -37,14 +37,16 @@ function Screen({ value }) {
     </Textfit>
   );
 }
-Screen.PropTypes = {
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+Screen.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 function ButtonBox({ children }) {
   return <div className="buutton-box">{children}</div>;
 }
-
+ButtonBox.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 function Button({ value, onClick, className }) {
   return (
     <button className={`'button ${className}`} onClick={onClick}>
@@ -52,3 +54,13 @@ function Button({ value, onClick, className }) {
     </button>
   );
 }
+
+Button.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  className: "",
+};

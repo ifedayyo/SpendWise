@@ -24,7 +24,7 @@ function UserAccount() {
         <p>Total Expenses: #200,000</p>
         <p> Total Income: #300,000</p>
       </div>
-      <body>
+      <section>
         <Options />
         <div className="account-body">
           <a href="#">
@@ -47,7 +47,7 @@ function UserAccount() {
 
               {isOpenTwo && (
                 <select className="dropdown-select">
-                  (<option onClick={handleSelectChange}> Food </option>)
+                  (<option onChange={handleSelectChange}> Food </option>)
                   <option> Accomodation/Housing </option>
                   <option> Rental </option>
                   <option> Transportation </option>
@@ -76,7 +76,7 @@ function UserAccount() {
             </div>
           )}
         </div>
-      </body>
+      </section>
     </>
   );
 }
