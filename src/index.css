@@ -247,7 +247,7 @@ input {
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 10px;
 }
-.button {
+.button-calculator {
   border: none;
   font-size: 24px;
   font-weight: bold;
