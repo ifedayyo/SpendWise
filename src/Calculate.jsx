@@ -1,5 +1,6 @@
 import { Textfit } from "react-textfit";
 import { PropTypes } from "prop-types";
+import { useState } from "react";
 
 import "./index.css";
 
@@ -11,18 +12,24 @@ const btnValues = [
   [0, ".", "="],
 ];
 export default function Calculate() {
+  const [screenValue, setScreenValue] = useState("0");
+
+  //the function below will handle button clicks
+  const handleButtonClick = (btn) => {
+    console.log(`${btn} clicked`);
+
+    setScreenValue((prevValue) => prevValue + btn);
+  };
   return (
     <div className="calculator-container">
-      <Screen value="0" />
+      <Screen value={screenValue} />
       <ButtonBox>
         {btnValues.flat().map((btn, i) => {
           <Button
             key={i}
             className={btn === "=" ? "equals" : ""}
             value={btn}
-            onClick={() => {
-              console.log(`${btn} clicked`);
-            }}
+            onClick={() => handleButtonClick(btn)}
           />;
         })}
       </ButtonBox>
