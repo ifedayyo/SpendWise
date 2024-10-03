@@ -69,6 +69,12 @@ export default function Calculate() {
     setOperator(null);
     setPreviousValue(null);
   };
+
+  const resetCalculator = () => {
+    setScreenValue("0");
+    setPreviousValue(null);
+    setOperator(null);
+  };
   return (
     <div className="calculator-container">
       <Screen value={screenValue} />
