@@ -54,6 +54,7 @@ function ButtonBox({ children }) {
 ButtonBox.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 function Button({ value, onClick, className }) {
   return (
     <button className={`'button ${className}`} onClick={onClick}>

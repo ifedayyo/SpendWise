@@ -235,7 +235,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: white;
+  color: black;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -254,4 +254,5 @@ input {
   cursor: pointer;
   border-radius: 10px;
   outline: none;
+  color: black;
 }
