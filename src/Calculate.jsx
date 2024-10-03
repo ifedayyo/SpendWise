@@ -6,7 +6,7 @@ import "./index.css";
 
 const btnValues = [
   ["C", "%", "/"],
-  [7, 8, 9, "X"],
+  [7, 8, 9, "*"],
   [4, 5, 6, "-"],
   [1, 2, 3, "+"],
   [0, ".", "="],
@@ -20,13 +20,13 @@ export default function Calculate() {
   const handleButtonClick = (btn) => {
     //If it is a number
     if (!isNaN(btn)) {
-      setScreenValue((previousValue) =>
-        previousValue === "0" ? String(btn) : previousValue + String(btn)
+      setScreenValue((prevValue) =>
+        prevValue === "0" ? String(btn) : prevValue + String(btn)
       );
     }
 
     //If it is an operator
-    if (["+", "-", "x", "/"].includes(btn)) {
+    if (["+", "-", "*", "/"].includes(btn)) {
       setOperator(btn);
       setPreviousValue(screenValue);
       setScreenValue("0");
@@ -56,7 +56,7 @@ export default function Calculate() {
       case "-":
         result = prev - current;
         break;
-      case "X":
+      case "*":
         result = prev * current;
         break;
       case "/":
