@@ -256,3 +256,7 @@ input {
   outline: none;
   color: black;
 }
+.calculator-section {
+  margin-top: 20px;
+  width: 100%;
+}

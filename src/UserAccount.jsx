@@ -7,9 +7,12 @@ function UserAccount() {
   const [isOpenTwo, setIsOpenTwo] = useState(false);
   const [isOpenThree, setIsOpenThree] = useState(false);
   const [calculate, setCalculate] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (e) => {
-    if (e.target.value === "Food") {
+    const value = e.target.value;
+    setSelectedOption(value);
+    if (value != "") {
       setCalculate(true);
     } else {
       setCalculate(false);
@@ -48,8 +51,10 @@ function UserAccount() {
               {isOpenTwo && (
                 <select
                   className="dropdown-select"
+                  value="selectedOption"
                   onChange={handleSelectChange}
                 >
+                  <option value="">Select an option</option>
                   <option value="Food"> Food </option>
                   <option value="Accomodation"> Accomodation/Housing </option>
                   <option value="Rental"> Rental </option>
@@ -60,7 +65,11 @@ function UserAccount() {
                 </select>
               )}
 
-              {calculate && <Calculate />}
+              {selectedOption && (
+                <div>
+                  <p>Selected Option: {selectedOption}</p>
+                </div>
+              )}
 
               <h3
                 className="dropdown-one"
@@ -79,6 +88,8 @@ function UserAccount() {
             </div>
           )}
         </div>
+
+        <div className="calculator-section">{calculate && <Calculate />}</div>
       </section>
     </>
   );
