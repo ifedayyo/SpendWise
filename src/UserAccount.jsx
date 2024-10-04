@@ -46,14 +46,17 @@ function UserAccount() {
               </h3>
 
               {isOpenTwo && (
-                <select className="dropdown-select">
-                  (<option onChange={handleSelectChange}> Food </option>)
-                  <option> Accomodation/Housing </option>
-                  <option> Rental </option>
-                  <option> Transportation </option>
-                  <option> Shopping </option>
-                  <option> Emergency </option>
-                  <option> Miscallenous </option>
+                <select
+                  className="dropdown-select"
+                  onChange={handleSelectChange}
+                >
+                  <option value="Food"> Food </option>
+                  <option value="Accomodation"> Accomodation/Housing </option>
+                  <option value="Rental"> Rental </option>
+                  <option value="Transportation"> Transportation </option>
+                  <option value="Shopping"> Shopping </option>
+                  <option value="Emergency"> Emergency </option>
+                  <option value="Miscallenous"> Miscallenous </option>
                 </select>
               )}
 
