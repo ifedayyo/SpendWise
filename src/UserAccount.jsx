@@ -4,8 +4,7 @@ import Calculate from "./Calculate";
 
 function UserAccount() {
   const [isOpenOne, setIsOpenOne] = useState(false);
-  const [isOpenTwo, setIsOpenTwo] = useState(false);
-  const [isOpenThree, setIsOpenThree] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
   const [calculate, setCalculate] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -17,6 +16,15 @@ function UserAccount() {
     } else {
       setCalculate(false);
     }
+  };
+
+  //Function to toggle sections
+  const toggleSection = (section) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
+
+  const closeCalculator = () => {
+    setCalculate(false); //Hide calculator
   };
   function Options() {}
   return (
@@ -43,12 +51,12 @@ function UserAccount() {
             <div className="dropdown-container">
               <h3
                 className="dropdown-one"
-                onClick={() => setIsOpenTwo(!isOpenTwo)}
+                onClick={() => toggleSection("Expenses")}
               >
                 Expenses{" "}
               </h3>
 
-              {isOpenTwo && (
+              {openSection === "Expenses" && (
                 <select
                   className="dropdown-select"
                   value="selectedOption"
@@ -65,20 +73,20 @@ function UserAccount() {
                 </select>
               )}
 
-              {selectedOption && (
+              {/*{selectedOption && (
                 <div>
                   <p>Selected Option: {selectedOption}</p>
                 </div>
-              )}
+              )}*/}
 
               <h3
                 className="dropdown-one"
-                onClick={() => setIsOpenThree(!isOpenThree)}
+                onClick={() => toggleSection("Income")}
               >
                 {" "}
                 Income
               </h3>
-              {isOpenThree && (
+              {openSection === "Income" && (
                 <select className="dropdown-select">
                   <option> Salary </option>
                   <option> Dividends </option>
@@ -89,7 +97,9 @@ function UserAccount() {
           )}
         </div>
 
-        <div className="calculator-section">{calculate && <Calculate />}</div>
+        <div className="calculator-section">
+          {calculate && <Calculate onClose={closeCalculator} />}
+        </div>
       </section>
     </>
   );

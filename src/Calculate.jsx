@@ -11,7 +11,7 @@ const btnValues = [
   [1, 2, 3, "+"],
   [0, ".", "="],
 ];
-export default function Calculate() {
+export default function Calculate({ onClose }) {
   const [screenValue, setScreenValue] = useState("0");
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
@@ -90,6 +90,10 @@ export default function Calculate() {
           );
         })}
       </ButtonBox>
+
+      <button className="close-btn" onClick={onClose}>
+        X
+      </button>
     </div>
   );
 }
