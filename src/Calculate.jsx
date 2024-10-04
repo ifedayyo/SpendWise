@@ -11,7 +11,11 @@ const btnValues = [
   [1, 2, 3, "+"],
   [0, ".", "="],
 ];
-export default function Calculate({ onClose }) {
+export default function Calculate({
+  onIncomeUpdate,
+  onExpensesUpdate,
+  option,
+}) {
   const [screenValue, setScreenValue] = useState("0");
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
@@ -68,6 +72,13 @@ export default function Calculate({ onClose }) {
     setScreenValue(String(result));
     setOperator(null);
     setPreviousValue(null);
+
+    //Update income or expenses based on the current option
+    if (option === "Income") {
+      onIncomeUpdate(result);
+    } else if (option === "Expenses") {
+      onExpensesUpdate(result);
+    }
   };
 
   const resetCalculator = () => {
@@ -90,10 +101,6 @@ export default function Calculate({ onClose }) {
           );
         })}
       </ButtonBox>
-
-      <button className="close-btn" onClick={onClose}>
-        X
-      </button>
     </div>
   );
 }

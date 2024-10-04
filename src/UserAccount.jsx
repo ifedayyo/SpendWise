@@ -7,6 +7,7 @@ function UserAccount() {
   const [openSection, setOpenSection] = useState(null);
   const [calculate, setCalculate] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState("Income");
 
   const [income, setIncome] = useState(0);
   const [expenses, setExpenses] = useState(0);
@@ -45,19 +46,19 @@ function UserAccount() {
       {/*The balance display section */}
       <div className="balance-display">
         <p> 2024-08-09 </p>
-        <p>Current Balance:</p>
+        <p>Current Balance:#{income - expenses}</p>
         <p>Total Expenses: #{expenses}</p>
         <p> Total Income: #{income}</p>
       </div>
 
-      {/**calculator commponent */}
+      {/**calculator commponent 
       {calculate && (
         <Calculate
           onIncomeUpdate={handleIncomeUpdate}
           onExpensesUpdate={handleExpensesUpdate}
         />
       )}
-
+*/}
       <section>
         <Options />
         <div className="account-body">
@@ -102,6 +103,19 @@ function UserAccount() {
                 </div>
               )}*/}
 
+              <button onClick={closeCalculator}>
+                {" "}
+                {isCalculatorOpen ? " Close calculator" : "Open calculator"}
+              </button>
+
+              {/** display calculator if isCalculatorOpen is true */}
+              {isCalculatorOpen && (
+                <Calculate
+                  onIncomeUpdate={handleIncomeUpdate}
+                  onExpensesUpdate={handleExpensesUpdate}
+                  option={selectedOption}
+                />
+              )}
               <h3
                 className="dropdown-one"
                 onClick={() => toggleSection("Income")}
@@ -125,7 +139,13 @@ function UserAccount() {
         </div>
 
         <div className="calculator-section">
-          {calculate && <Calculate onClose={closeCalculator} />}
+          {/*{calculate && (
+            <Calculate
+              onIncomeUpdate={handleIncomeUpdate}
+              onExpensesUpdate={handleExpensesUpdate}
+              option={selectedOption}
+            />
+          )}*/}
         </div>
       </section>
     </>
