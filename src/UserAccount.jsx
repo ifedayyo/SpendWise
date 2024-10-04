@@ -8,6 +8,9 @@ function UserAccount() {
   const [calculate, setCalculate] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
+  const [income, setIncome] = useState(0);
+  const [expenses, setExpenses] = useState(0);
+
   const handleSelectChange = (e) => {
     const value = e.target.value;
     setSelectedOption(value);
@@ -26,15 +29,35 @@ function UserAccount() {
   const closeCalculator = () => {
     setCalculate(false); //Hide calculator
   };
+
+  //this function will update income
+  const handleIncomeUpdate = (newIncome) => {
+    setIncome((prevIncome) => prevIncome + parseFloat(newIncome));
+  };
+
+  //this function will update expenses
+  const handleExpensesUpdate = (newExpense) => {
+    setExpenses((prevExpense) => prevExpense + parseFloat(newExpense));
+  };
   function Options() {}
   return (
     <>
+      {/*The balance display section */}
       <div className="balance-display">
         <p> 2024-08-09 </p>
         <p>Current Balance:</p>
-        <p>Total Expenses: #200,000</p>
-        <p> Total Income: #300,000</p>
+        <p>Total Expenses: #{expenses}</p>
+        <p> Total Income: #{income}</p>
       </div>
+
+      {/**calculator commponent */}
+      {calculate && (
+        <Calculate
+          onIncomeUpdate={handleIncomeUpdate}
+          onExpensesUpdate={handleExpensesUpdate}
+        />
+      )}
+
       <section>
         <Options />
         <div className="account-body">
@@ -87,7 +110,11 @@ function UserAccount() {
                 Income
               </h3>
               {openSection === "Income" && (
-                <select className="dropdown-select">
+                <select
+                  className="dropdown-select"
+                  value="selectedOption"
+                  onChange={handleSelectChange}
+                >
                   <option> Salary </option>
                   <option> Dividends </option>
                   <option> Refunds </option>
