@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import "./index.css";
 
-const btnValues = [
+const btn = [
   ["C", "%", "/"],
   [7, 8, 9, "*"],
   [4, 5, 6, "-"],
@@ -17,30 +17,33 @@ export default function Calculate({ closeCalculator }) {
   const [operator, setOperator] = useState(null);
 
   //the function below will handle button clicks
-  const handleButtonClick = (btn) => {
+  const handleButtonClick = (value) => {
     //If it is a number
     if (!isNaN(btn)) {
       setScreenValue((prevValue) =>
-        prevValue === "0" ? String(btn) : prevValue + String(btn)
+        prevValue === "0" ? String(value) : prevValue + String(value)
       );
     }
 
     //If it is an operator
-    if (["+", "-", "*", "/"].includes(btn)) {
-      setOperator(btn);
+    if (["+", "-", "*", "/"].includes(value)) {
+      setOperator(value);
       setPreviousValue(screenValue);
       setScreenValue("0");
     }
 
     //If it is the equal (=) sign, perform the calculation
-    if (btn === "=") {
+    else if (value === "=") {
       if (operator && previousValue) {
         calculateResult();
       }
     }
 
-    if (btn === "C") {
-      resetCalculator();
+    //iF IT IS c, reset the calculator
+    else if (value === "C") {
+      setScreenValue("0");
+      setPreviousValue(null);
+      setOperator(null);
     }
   };
 
@@ -70,65 +73,59 @@ export default function Calculate({ closeCalculator }) {
     setPreviousValue(null);
 
     //Update income or expenses based on the current option
-  
 
-  const resetCalculator = () => {
-    setScreenValue("0");
-    setPreviousValue(null);
-    setOperator(null);
+    return (
+      <div className="calculator-container">
+        <button onClick={closeCalculator} className="close-btn">
+          X
+        </button>
+
+        <Screen value={screenValue} />
+        <ButtonBox>
+          {btn.flat().map((value, i) => {
+            return (
+              <Button
+                key={i}
+                className={value === "=" ? "equals" : ""}
+                value={value}
+                onClick={() => handleButtonClick(btn)}
+              />
+            );
+          })}
+        </ButtonBox>
+      </div>
+    );
   };
-  return (
-    <div className="calculator-container">
-      <button onClick={closeCalculator} className="close-btn">
-        X
+
+  function Screen({ value }) {
+    return (
+      <Textfit className="screen" mode="single" max={70}>
+        {value}
+      </Textfit>
+    );
+  }
+  Screen.propTypes = {
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  };
+
+  function ButtonBox({ children }) {
+    return <div className="buutton-box">{children}</div>;
+  }
+  ButtonBox.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
+  function Button({ value, onClick }) {
+    return (
+      <button className="button-calculator" onClick={onClick}>
+        {value}
       </button>
+    );
+  }
 
-      <Screen value={screenValue} />
-      <ButtonBox>
-        {btnValues.flat().map((btn, i) => {
-          return (
-            <Button
-              key={i}
-              className={btn === "=" ? "equals" : ""}
-              value={btn}
-              onClick={() => handleButtonClick(btn)}
-            />
-          );
-        })}
-      </ButtonBox>
-    </div>
-  );
+  Button.propTypes = {
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.string,
+  };
 }
-
-function Screen({ value }) {
-  return (
-    <Textfit className="screen" mode="single" max={70}>
-      {value}
-    </Textfit>
-  );
-}
-Screen.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-};
-
-function ButtonBox({ children }) {
-  return <div className="buutton-box">{children}</div>;
-}
-ButtonBox.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-function Button({ value, onClick }) {
-  return (
-    <button className="button-calculator" onClick={onClick}>
-      {value}
-    </button>
-  );
-}
-
-Button.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-};
-
