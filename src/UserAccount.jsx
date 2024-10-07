@@ -22,6 +22,10 @@ function UserAccount() {
     }
   };
 
+  //Function to toggle calculator visibility
+  const toggleCalculator = () => {
+    setIsCalculatorOpen(!isCalculatorOpen);
+  };
   //Function to toggle sections
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section));
@@ -103,19 +107,17 @@ function UserAccount() {
                 </div>
               )}*/}
 
-              <button onClick={closeCalculator}>
-                {" "}
-                {isCalculatorOpen ? " Close calculator" : "Open calculator"}
+              {/**Button to open calculator */}
+              <button onClick={toggleCalculator}>
+                {isCalculatorOpen ? "Close Calculator" : "Open Calculator"}
               </button>
 
-              {/** display calculator if isCalculatorOpen is true */}
               {isCalculatorOpen && (
-                <Calculate
-                  onIncomeUpdate={handleIncomeUpdate}
-                  onExpensesUpdate={handleExpensesUpdate}
-                  option={selectedOption}
-                />
+                <button onClick={toggleCalculator} className="close-btn">
+                  X
+                </button>
               )}
+
               <h3
                 className="dropdown-one"
                 onClick={() => toggleSection("Income")}
@@ -139,13 +141,13 @@ function UserAccount() {
         </div>
 
         <div className="calculator-section">
-          {/*{calculate && (
+          {calculate && (
             <Calculate
               onIncomeUpdate={handleIncomeUpdate}
               onExpensesUpdate={handleExpensesUpdate}
               option={selectedOption}
             />
-          )}*/}
+          )}
         </div>
       </section>
     </>
