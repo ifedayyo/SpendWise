@@ -7,7 +7,7 @@ function UserAccount() {
   const [openSection, setOpenSection] = useState(null);
   const [calculate, setCalculate] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [isCalculatorOpen, setIsCalculatorOpen] = useState("Income");
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   const [income, setIncome] = useState(0);
   const [expenses, setExpenses] = useState(0);
@@ -22,17 +22,15 @@ function UserAccount() {
     }
   };
 
-  //Function to toggle calculator visibility
-  const toggleCalculator = () => {
+  const closeCalculator = () => {
     setIsCalculatorOpen(!isCalculatorOpen);
   };
+
+  //Function to toggle calculator visibility
+
   //Function to toggle sections
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section));
-  };
-
-  const closeCalculator = () => {
-    setCalculate(false); //Hide calculator
   };
 
   //this function will update income
@@ -108,15 +106,6 @@ function UserAccount() {
               )}*/}
 
               {/**Button to open calculator */}
-              <button onClick={toggleCalculator}>
-                {isCalculatorOpen ? "Close Calculator" : "Open Calculator"}
-              </button>
-
-              {isCalculatorOpen && (
-                <button onClick={toggleCalculator} className="close-btn">
-                  X
-                </button>
-              )}
 
               <h3
                 className="dropdown-one"
@@ -146,6 +135,7 @@ function UserAccount() {
               onIncomeUpdate={handleIncomeUpdate}
               onExpensesUpdate={handleExpensesUpdate}
               option={selectedOption}
+              closeCalculator={closeCalculator}
             />
           )}
         </div>

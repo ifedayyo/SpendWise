@@ -11,11 +11,7 @@ const btnValues = [
   [1, 2, 3, "+"],
   [0, ".", "="],
 ];
-export default function Calculate({
-  onIncomeUpdate,
-  onExpensesUpdate,
-  option,
-}) {
+export default function Calculate({ closeCalculator }) {
   const [screenValue, setScreenValue] = useState("0");
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
@@ -74,12 +70,7 @@ export default function Calculate({
     setPreviousValue(null);
 
     //Update income or expenses based on the current option
-    if (option === "Income") {
-      onIncomeUpdate(result);
-    } else if (option === "Expenses") {
-      onExpensesUpdate(result);
-    }
-  };
+  
 
   const resetCalculator = () => {
     setScreenValue("0");
@@ -88,6 +79,10 @@ export default function Calculate({
   };
   return (
     <div className="calculator-container">
+      <button onClick={closeCalculator} className="close-btn">
+        X
+      </button>
+
       <Screen value={screenValue} />
       <ButtonBox>
         {btnValues.flat().map((btn, i) => {
@@ -137,6 +132,3 @@ Button.propTypes = {
   className: PropTypes.string,
 };
 
-Button.defaultProps = {
-  className: "",
-};
