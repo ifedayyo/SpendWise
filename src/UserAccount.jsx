@@ -7,7 +7,6 @@ function UserAccount() {
   const [openSection, setOpenSection] = useState(null);
   const [calculate, setCalculate] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   const [income, setIncome] = useState(0);
   const [expenses, setExpenses] = useState(0);
@@ -20,10 +19,6 @@ function UserAccount() {
     } else {
       setCalculate(false);
     }
-  };
-
-  const closeCalculator = () => {
-    setIsCalculatorOpen(!isCalculatorOpen);
   };
 
   //Function to toggle calculator visibility
@@ -135,7 +130,6 @@ function UserAccount() {
               onIncomeUpdate={handleIncomeUpdate}
               onExpensesUpdate={handleExpensesUpdate}
               option={selectedOption}
-              closeCalculator={closeCalculator}
             />
           )}
         </div>
