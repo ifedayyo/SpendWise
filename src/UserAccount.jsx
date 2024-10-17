@@ -13,6 +13,7 @@ function UserAccount() {
 
   const handleSelectChange = (e) => {
     const value = e.target.value;
+    console.log("Selected option:", value);
     setSelectedOption(value);
     if (value != "") {
       setCalculate(true);
@@ -80,7 +81,7 @@ function UserAccount() {
               {openSection === "Expenses" && (
                 <select
                   className="dropdown-select"
-                  value="selectedOption"
+                  value={selectedOption}
                   onChange={handleSelectChange}
                 >
                   <option value="">Select an option</option>
@@ -112,7 +113,7 @@ function UserAccount() {
               {openSection === "Income" && (
                 <select
                   className="dropdown-select"
-                  value="selectedOption"
+                  value={selectedOption}
                   onChange={handleSelectChange}
                 >
                   <option> Salary </option>
@@ -130,6 +131,7 @@ function UserAccount() {
               onIncomeUpdate={handleIncomeUpdate}
               onExpensesUpdate={handleExpensesUpdate}
               option={selectedOption}
+              setCalculate={setCalculate}
             />
           )}
         </div>
@@ -157,5 +159,13 @@ export default UserAccount;
   the amount i will spend on list of items
   5. get a warning if i am 10% close to the set limit
   6. 
+
+  issues with the calculator:
+  1. the calculator does not reset when i click on a different
+   drop down option
+  2. once i click the "X" button which automatically closes 
+  the calculator, i can no longer open the calculator if i 
+  click on any of the dropdown options
+  3. 
   */
 }

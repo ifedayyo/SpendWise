@@ -77,28 +77,30 @@ export default function Calculate() {
   //Update income or expenses based on the current option
 
   return (
-    <div className="calculator-container">
+    <>
       {isOpen && (
-        <button onClick={closeCalculator} className="close-btn">
-          X
-        </button>
-      )}
+        <div className="calculator-container">
+          <button onClick={closeCalculator} className="close-btn">
+            X
+          </button>
 
-      <Screen value={screenValue} />
-      <ButtonBox>
-        {btn.flat().map((value, i) => {
-          //console.log("Button rendered:", value);
-          return (
-            <Button
-              key={i}
-              className={value === "=" ? "equals" : ""}
-              value={value}
-              onClick={() => handleButtonClick(value)} //Passing the value, not btn array
-            />
-          );
-        })}
-      </ButtonBox>
-    </div>
+          <Screen value={screenValue} />
+          <ButtonBox>
+            {btn.flat().map((value, i) => {
+              //console.log("Button rendered:", value);
+              return (
+                <Button
+                  key={i}
+                  className={value === "=" ? "equals" : ""}
+                  value={value}
+                  onClick={() => handleButtonClick(value)} //Passing the value, not btn array
+                />
+              );
+            })}
+          </ButtonBox>
+        </div>
+      )}
+    </>
   );
 }
 
