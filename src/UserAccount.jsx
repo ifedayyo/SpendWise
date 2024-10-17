@@ -114,6 +114,7 @@ function UserAccount() {
                   value={selectedOption}
                   onChange={handleSelectChange}
                 >
+                  <option> Select an option</option>
                   <option> Salary </option>
                   <option> Dividends </option>
                   <option> Refunds </option>
@@ -167,6 +168,9 @@ export default UserAccount;
   2. once i click the "X" button which automatically closes 
   the calculator, i can no longer open the calculator if i 
   click on any of the dropdown options
+
+  installing a key (i.e. key={selectedOption}) in calculate
+  resolved all of the problems above
   3. 
   */
 }
