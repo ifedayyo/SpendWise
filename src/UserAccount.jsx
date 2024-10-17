@@ -42,8 +42,8 @@ function UserAccount() {
       {/*The balance display section */}
       <div className="balance-display">
         <p> 2024-08-09 </p>
-        <p>Current Balance:#{income - expenses}</p>
-        <p>Total Expenses: #{expenses}</p>
+        <p>Current Balance:#{}</p>
+        <p>Total Expenses: #{}</p>
         <p> Total Income: #{income}</p>
       </div>
 

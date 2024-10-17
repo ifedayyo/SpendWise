@@ -63,6 +63,8 @@ export default function Calculate({
       onExpensesUpdate(amount);
     }
     closeCalculator();
+
+    setCalculate(false);
   };
 
   const calculateResult = () => {
@@ -84,7 +86,7 @@ export default function Calculate({
         result = prev / current;
         break;
       case "=":
-        result = { handleSubmission };
+        handleSubmission();
         break;
       default:
         return;
@@ -122,6 +124,13 @@ export default function Calculate({
     </>
   );
 }
+
+Calculate.propTypes = {
+  onIncomeUpdate: PropTypes.func.isRequired,
+  onExpensesUpdate: PropTypes.func.isRequired,
+  option: PropTypes.string.isRequired,
+  setCalculate: PropTypes.func.isRequired,
+};
 
 function Screen({ value }) {
   return (
