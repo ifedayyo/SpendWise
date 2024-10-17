@@ -170,7 +170,9 @@ export default UserAccount;
   click on any of the dropdown options
 
   installing a key (i.e. key={selectedOption}) in calculate
-  resolved all of the problems above
+  resolved all of the problems above. This means the key prop
+  is useful for forcing a re-rendering and reseting component
+  states in react.
   3. 
   */
 }
