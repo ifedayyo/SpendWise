@@ -22,8 +22,6 @@ function UserAccount() {
     }
   };
 
-  //Function to toggle calculator visibility
-
   //Function to toggle sections
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section));
@@ -32,6 +30,11 @@ function UserAccount() {
   //this function will update income
   const handleIncomeUpdate = (newIncome) => {
     setIncome((prevIncome) => prevIncome + parseFloat(newIncome));
+  };
+
+  //Reset calculator values when dropdown changes
+  const resetCalculator = () => {
+    setIncome;
   };
 
   //this function will update expenses
@@ -161,7 +164,9 @@ export default UserAccount;
   6. 
 
   issues with the calculator:
-  1. the calculator does not reset when i click on a different
+  1. the calculator does not reset (i.e. the calculation 
+  made in the previous dropdown option is not erased) when 
+  i click on a different
    drop down option
   2. once i click the "X" button which automatically closes 
   the calculator, i can no longer open the calculator if i 
