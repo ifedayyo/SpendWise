@@ -36,7 +36,7 @@ function UserAccount() {
   const handleExpensesUpdate = (newExpense) => {
     setExpenses((prevExpense) => prevExpense + parseFloat(newExpense));
   };
-  function Options() {}
+  //function Options() {}
   return (
     <>
       {/*The balance display section */}
@@ -56,7 +56,6 @@ function UserAccount() {
       )}
 */}
       <section>
-        <Options />
         <div className="account-body">
           <a href="#">
             <img

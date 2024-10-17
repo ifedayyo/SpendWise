@@ -11,7 +11,12 @@ const btn = [
   [1, 2, 3, "+"],
   [0, ".", "="],
 ];
-export default function Calculate() {
+export default function Calculate({
+  onIncomeUpdate,
+  onExpensesUpdate,
+  option,
+  setCalculate,
+}) {
   const [screenValue, setScreenValue] = useState("0");
   const [previousValue, setPreviousValue] = useState(null);
   const [operator, setOperator] = useState(null);
@@ -49,6 +54,17 @@ export default function Calculate() {
       setOperator(null);
     }
   };
+
+  const handleSubmission = () => {
+    const amount = parseFloat(screenValue);
+    if (option === "Salary" || option === "Dividends" || option === "Refunds") {
+      onIncomeUpdate(amount);
+    } else {
+      onExpensesUpdate(amount);
+    }
+    closeCalculator();
+  };
+
   const calculateResult = () => {
     const prev = parseFloat(previousValue);
     const current = parseFloat(screenValue);
@@ -66,6 +82,9 @@ export default function Calculate() {
         break;
       case "/":
         result = prev / current;
+        break;
+      case "=":
+        result = { handleSubmission };
         break;
       default:
         return;
