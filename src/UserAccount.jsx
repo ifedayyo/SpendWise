@@ -13,7 +13,7 @@ function UserAccount() {
 
   const handleSelectChange = (e) => {
     const value = e.target.value;
-    console.log("Selected option:", value);
+    //console.log("Selected option:", value);
     setSelectedOption(value);
     if (value != "") {
       setCalculate(true);
@@ -30,11 +30,6 @@ function UserAccount() {
   //this function will update income
   const handleIncomeUpdate = (newIncome) => {
     setIncome((prevIncome) => prevIncome + parseFloat(newIncome));
-  };
-
-  //Reset calculator values when dropdown changes
-  const resetCalculator = () => {
-    setIncome;
   };
 
   //this function will update expenses
@@ -131,6 +126,7 @@ function UserAccount() {
         <div className="calculator-section">
           {calculate && (
             <Calculate
+              key={selectedOption}
               onIncomeUpdate={handleIncomeUpdate}
               onExpensesUpdate={handleExpensesUpdate}
               option={selectedOption}
