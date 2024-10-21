@@ -42,9 +42,11 @@ function UserAccount() {
       {/*The balance display section */}
       <div className="balance-display">
         <p> 2024-08-09 </p>
-        <p>Current Balance:#{}</p>
-        <p>Total Expenses: #{}</p>
-        <p> Total Income: #{income}</p>
+        <p>
+          Current Balance:#{Number(handleIncomeUpdate - handleExpensesUpdate)}
+        </p>
+        <p>Total Expenses: #{Number(handleExpensesUpdate)}</p>
+        <p> Total Income: #{Number(handleIncomeUpdate)}</p>
       </div>
 
       {/**calculator commponent 
@@ -172,6 +174,11 @@ export default UserAccount;
   resolved all of the problems above. This means the key prop
   is useful for forcing a re-rendering and reseting component
   states in react.
-  3. 
+
+  TASK FOR TODAY:
+  1. I want to make sure that the result gotten from the 
+  calculation is being passed to the current balance & total
+  expenses & total income. how the fuck do we go about this?
+  there is a formula somewhere that we will find 
   */
 }
