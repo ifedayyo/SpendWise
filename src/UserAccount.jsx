@@ -28,13 +28,13 @@ function UserAccount() {
   };
 
   //this function will update income
-  const handleIncomeUpdate = (newIncome) => {
-    setIncome((prevIncome) => prevIncome + parseFloat(newIncome));
+  const handleIncomeUpdate = (event) => {
+    setIncome(parseInt(event.target.value));
   };
 
   //this function will update expenses
-  const handleExpensesUpdate = (newExpense) => {
-    setExpenses((prevExpense) => prevExpense + parseFloat(newExpense));
+  const handleExpensesUpdate = (event) => {
+    setExpenses(parseInt(event.target.value));
   };
   //function Options() {}
   return (
@@ -42,11 +42,9 @@ function UserAccount() {
       {/*The balance display section */}
       <div className="balance-display">
         <p> 2024-08-09 </p>
-        <p>
-          Current Balance:#{Number(handleIncomeUpdate - handleExpensesUpdate)}
-        </p>
-        <p>Total Expenses: #{Number(handleExpensesUpdate)}</p>
-        <p> Total Income: #{Number(handleIncomeUpdate)}</p>
+        <p type="number">Current Balance: {income - expenses}</p>
+        <p type="number">Total Expenses: {expenses}</p>
+        <p type="number"> Total Income: {income} </p>
       </div>
 
       {/**calculator commponent 
