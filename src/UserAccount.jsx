@@ -28,13 +28,13 @@ function UserAccount() {
   };
 
   //this function will update income
-  const handleIncomeUpdate = (income) => {
-    setIncome(parseInt(income.target.value));
+  const handleIncomeUpdate = (amount) => {
+    setIncome(income + amount);
   };
 
   //this function will update expenses
-  const handleExpensesUpdate = (expenses) => {
-    setExpenses(parseInt(expenses.target.value));
+  const handleExpensesUpdate = (amount) => {
+    setExpenses(expenses + amount);
   };
   //function Options() {}
   return (
@@ -43,18 +43,17 @@ function UserAccount() {
       <div className="balance-display">
         <p> 2024-08-09 </p>
         <p type="number">Current Balance: {income - expenses}</p>
-        <p type="number">Total Expenses: {handleExpensesUpdate}</p>
-        <p type="number"> Total Income: {handleIncomeUpdate} </p>
+        <p type="number">Total Expenses: {expenses}</p>
+        <p type="number"> Total Income: {income} </p>
       </div>
 
-      {/**calculator commponent 
+      {/*calculator component */}
       {calculate && (
         <Calculate
           onIncomeUpdate={handleIncomeUpdate}
           onExpensesUpdate={handleExpensesUpdate}
         />
       )}
-*/}
       <section>
         <div className="account-body">
           <a href="#">
@@ -178,5 +177,13 @@ export default UserAccount;
   calculation is being passed to the current balance & total
   expenses & total income. how the fuck do we go about this?
   there is a formula somewhere that we will find 
+
+  2. There is a disconnect:
+  i. First, i need the result gotten from the calculation (for 
+  each of the options for the expense and income section)
+  to reflect on the display tab in their respective position 
+  (ie income, expense and balance)
+  ii. Second, i need the current balance to reflect the c
+  orrect response
   */
 }
