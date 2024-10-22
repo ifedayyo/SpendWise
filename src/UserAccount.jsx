@@ -13,9 +13,10 @@ function UserAccount() {
 
   const handleSelectChange = (e) => {
     const value = e.target.value;
+    console.log(value);
     //console.log("Selected option:", value);
     setSelectedOption(value);
-    if (value != "") {
+    if (value !== "") {
       setCalculate(true);
     } else {
       setCalculate(false);
@@ -47,13 +48,6 @@ function UserAccount() {
         <p type="number"> Total Income: {income} </p>
       </div>
 
-      {/*calculator component */}
-      {calculate && (
-        <Calculate
-          onIncomeUpdate={handleIncomeUpdate}
-          onExpensesUpdate={handleExpensesUpdate}
-        />
-      )}
       <section>
         <div className="account-body">
           <a href="#">

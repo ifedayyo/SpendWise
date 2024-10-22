@@ -44,6 +44,8 @@ export default function Calculate({
     else if (value === "=") {
       if (operator && previousValue) {
         calculateResult();
+      } else {
+        handleSubmission();
       }
     }
 
@@ -57,7 +59,7 @@ export default function Calculate({
 
   const handleSubmission = () => {
     const amount = parseFloat(screenValue);
-    if (option === "Salary" || option === "Dividends" || option === "Refunds") {
+    if (["Salary", "Dividends", "Refunds"].includes(option)) {
       onIncomeUpdate(amount);
     } else {
       onExpensesUpdate(amount);
