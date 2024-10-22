@@ -11,8 +11,9 @@ export default function HomePage() {
           </h1>
           <p className="descriptionparagraph">
             {" "}
-            The month is not over and you are already owing PalmPay. We know you
-            want better for yourself. <br />
+            The month is not over and PalmPay is already dragging you by the
+            neck because you have <i>gbese</i> to pay. We know you want better
+            for yourself. <br />
             You want to make the most of every single kobo. You want to track
             how money trinkles in and out of your account. You want to save for
             the rainy day too. You don't want to eat your future. <br /> We
