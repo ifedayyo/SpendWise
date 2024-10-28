@@ -24,6 +24,7 @@ function UserAccount() {
   };
 
   //Function to toggle sections
+
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section));
   };
